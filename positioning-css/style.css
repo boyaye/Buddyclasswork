@@ -1,0 +1,43 @@
+header{
+    background-color: aquamarine;
+    border: 10px solid blue;
+    text-align: center;
+    font-size: 30px;
+    padding: 35px;
+    font-weight: bold;
+}
+
+section{
+    border: 7px solid black;
+    margin: 30px 100px;
+    height: 400px;
+  
+  
+}
+
+h2,
+p{
+    text-align: center;
+font-weight: bold;
+}
+
+#box2{
+    position: relative;
+    left: 100px;
+    top: 40px;
+}
+#parent3{
+position: relative;
+}
+
+#box3{
+    position: absolute;
+    right: 100px;
+ 
+}
+
+#box4{
+    position: fixed;
+    bottom: 0px;
+    right: 0;
+}

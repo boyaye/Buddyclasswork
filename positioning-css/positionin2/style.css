@@ -1,0 +1,59 @@
+body{
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+
+header{
+    width: 100%;
+    background-color: lightblue;
+    margin-top: 0;
+    border-bottom: 15px solid blue;
+    text-align: center;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+
+main{
+    margin: 150px;
+    
+}
+
+
+h1{
+    padding: 30px;
+    text-align: center;
+}
+.container{
+    height: 600px;
+    width: 600px;
+    border: 10px solid black;
+    margin: 10px auto;
+}
+#section2{
+    position: relative;
+}
+
+img{
+    display: block;
+}
+
+#box2{
+    position: relative;
+    left: 200px;
+}
+
+#box22{
+    position: absolute;
+    top: 0%;
+    left: 700px;
+}
+
+section{
+    margin: 100px;
+}
+

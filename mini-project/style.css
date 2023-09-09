@@ -1,0 +1,120 @@
+header{
+    background-color: darkolivegreen;
+    border-bottom: 10px solid bisque;
+    width: 100%;
+    position: fixed;
+top: 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+li{
+    list-style-type: none;
+    display: inline-block;
+ font-size: 20px;
+padding: 30px 20px;
+color:white;
+margin-right: 20px;
+
+}
+
+ul{
+    text-align: right;
+}
+
+h1{
+  text-align: center;
+font-weight: bold;
+}
+
+main{
+    margin: 150px 0 0;
+}
+
+img{
+    display: block;
+    margin: 0% auto;
+}
+figcaption{
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+
+footer{
+    background-color: darkolivegreen;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 10px solid darkgoldenrod;
+    font-size: large;
+color: white;
+}
+
+.form1{
+    text-align: center;
+  
+}
+
+label{
+    color:black;
+    border: 1 solid;
+}
+
+.hover1:hover{
+  
+   background-color:white;
+}
+
+.hover1:active{
+    background-color: blue;
+}
+
+input{
+    width: 80%;
+    background-color: azure;
+    border-radius: 5px;
+}
+
+
+
+form{
+    border: 4px solid darkgoldenrod;
+    width: 40%;
+    border-radius: 30px;
+    margin: 0px auto;
+    background-color: bisque;
+
+}
+
+.input1{
+width: 70%;
+margin: 2px;
+padding: 0px;
+
+}
+
+button{
+position: relative;
+left: 350px;
+bottom: 20px;
+margin: 0px;
+padding:15px;
+width: 90px;
+text-align: center;
+border-bottom: 1px solid black;
+background-color: olive;
+color: white;
+}
+#complete1{
+    background-color:blanchedalmond;
+    border-top: 5px solid darkgoldenrod;
+    padding-bottom: 60px;
+}
+
+button:hover{
+    background-color: aqua;
+    color: black;
+}

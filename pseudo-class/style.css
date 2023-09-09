@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: center;
+}
+
+button{
+width: 200px;
+    margin: 1%;
+    
+}
+
+button:hover{
+    background-color:blueviolet;
+    color: white;   
+}
+
+button:focus{
+  font-size: larger;
+    border-color: aqua;
+}
+
+button:active{
+    font-size: 150%;
+    box-shadow: 5px 5px 20px gray;
+}

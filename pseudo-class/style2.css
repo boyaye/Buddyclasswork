@@ -1,0 +1,90 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mainheader2{
+    display: flex;
+    justify-content: flex-start;
+    padding: 50px;}
+
+.mainheader{
+    padding: 20px;
+    text-decoration: none;
+    border: 0px solid grey;
+   margin: 20px;
+   box-shadow: 0 0 5px gray;
+   border-radius: .6em;
+   position: relative;
+}
+
+
+
+.dropdown1,.dropdown2 ,.dropdown3,.dropdown4{
+    display: flex;
+   position: absolute;
+    display: none;
+    border: px solid gray;
+    background-color: white;
+    box-shadow: 5px 5px 5px gray;
+    border-radius: 0 5px 5px ;
+  text-align: center;
+  padding: 40px;
+  width: 400px;
+  flex: 0 0 400px;
+  margin-top:20px;
+
+}
+
+span[data-buddy]{
+    position: relative;
+    text-transform: capitalize;
+color: brown;
+text-decoration: underline;
+cursor: grab;
+}
+
+span[data-buddy]:hover::after{
+    content: attr(data-buddy);
+    background-color: blue;
+    position: absolute;
+    color: white;
+    left: 0;
+    bottom: 24px;
+    font-size: 80%;
+    opacity: 0.7;
+    min-width: 200px;
+    padding: 12px;
+}
+
+
+.dropdown1 a{
+    display:flex;
+    flex-wrap: wrap;
+ text-decoration: none;
+    padding: 20px;
+}
+
+
+.dropdown2{
+    display: none;
+}
+.dropdown3{
+    display: none;
+}
+.dropdown4{
+    display: none;
+}
+
+.firstdropdown:hover .dropdown1{
+    display: block;
+}
+
+.firstdropdown2:hover .dropdown2{
+    display: block;
+}
+.firstdropdown3:hover .dropdown3{
+    display: block;
+}
+.firstdropdown4:hover .dropdown4{
+    display: block;
+}

@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+main{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    /* the vh viewport center the item in the center of its container*/
+    height: 100vh;
+    border: 2px solid
+    ;
+}
+
+div{
+    border: 4px groove black ;
+    padding: 20px;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 7px gray;
+}
+header{
+    padding: 25px;
+    background-color: darkgreen;
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* the imag 100% will always take the size of is container*/
+img{
+    width: 100%;
+  
+   
+}
+
