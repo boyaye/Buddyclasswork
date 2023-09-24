@@ -22,7 +22,7 @@ function writepasswod(){
 var password = generatepassword()
 var passwordtext = document.querySelector("#password");
 passwordtext.value = password;
-return passwordtext.value;
+return password;
 }
 
 
