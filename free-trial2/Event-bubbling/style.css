@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+  min-height: 1000;
+}
+
+
+
+button{
+    margin: 10%;
+    background-color: rgb(116, 119, 119);
+    color: white;
+    padding: 15px;
+}
+
+#orange{
+    background-color: azure;
+    margin: 100px 100px;
+    padding: 25px;
+    
+  
+}
+
+#purple{
+    background-color: rgb(100, 97, 97);
+    padding: 105px;
+    margin-bottom: 0;
+  
+}
+
+h2{
+    font-size: 18px;
+}

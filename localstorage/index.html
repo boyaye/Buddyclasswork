@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main id="container">
+
+        <div id="form1">
+            <h1>Sign Up</h1>
+            <form method="post" >
+                <label for="email">Email</label>
+                <input type="email" placeholder="janedoe@mail.com" id="emailinput">
+                <label for="password">Password</label>
+                <input type="password" placeholder="*********" id="passwordinput">
+                <div id="msg"></div>
+                <button id="submit">Sign Up</button>
+            </form>
+        </div>
+        <div id="form2">
+            <h1> Last Registered User</h1>
+            <p>Email: <span id="email"></span></p>
+            <p>Password: <span id="password"></span> </p>
+
+        </div>
+
+    <div id="container2">
+        <h1>Sign In</h1>
+        <form method="post">
+            <label for="email">Email</label>
+            <input type="email" id="email12">
+            <label for="password">Password</label>
+            <input type="password" id="password12">
+            <button id="submit1">Sign In</button>
+            <div id="register">
+                <h1>Registration information</h1>
+                <p>Email: <span id="displayem"></span></p>
+                <p>Password <span id="displaypas"></span></p>
+
+                <div>
+                    <p id="msging"></p>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+    </main>
+    
+    <script src="./script.js"></script>
+</body>
+</html>

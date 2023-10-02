@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#container{
+    padding: 80px;
+    border: 0px gray;
+    box-shadow: 0 0 3px gray;
+    width: 40%;
+    background-color: rgb(243, 235, 224);
+    margin: 80px auto;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    padding: 8px;
+    margin-top: 10px;
+}
+
+button{
+    padding: 8px;
+    margin-top:10px;
+    color: white;
+    background-color: rgb(49, 102, 199);
+}
+
+button:hover{
+    background-color: aquamarine;
+    color: black;
+}
+
+button:focus{
+    box-shadow: 2px 2px 4px gray;
+}
+
+button:active{
+    font-size: large;
+}
+
+#text{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+@media screen and (min-width: 680px ){
+    p{
+        margin: auto;
+    }
+
+}

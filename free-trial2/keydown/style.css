@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+   
+}
+
+.container{
+    background-color: rgb(252, 239, 225);
+    padding: 0 60px;
+    width: 40%;
+    margin: 5% auto;
+    box-shadow: 4px 5px 5px rgb(207, 204, 204);
+    border-radius: 20px;
+    text-align: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+#meme{
+    padding: 10px;
+}
+
+option{
+    padding: 60px;
+}
+
+select{
+    padding: 10px;
+    margin: 5% 0;
+}
+
+textarea{
+    resize: none;
+    height: 50px;
+}
+
+button{
+    font-size: large;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: white;
+    background-color: rgb(45, 61, 133);
+}

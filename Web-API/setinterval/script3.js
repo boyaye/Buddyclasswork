@@ -54,4 +54,7 @@ var interstart2 = setInterval(function(){
 
 }
 
-speed()
+
+var lower = document.getElementById("mybtn");
+
+lower.addEventListener("click",speed)

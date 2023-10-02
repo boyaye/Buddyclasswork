@@ -1,0 +1,26 @@
+*,
+*::before
+*::after{
+    box-sizing: border-box;
+}
+
+.box{
+    display: block;
+    border: 1px sold gray;
+    background-color: blueviolet;
+    width: 30%;
+    margin: 1%;
+   height : 200px;
+   text-align: center;
+   object-fit: cover;
+   border-radius: 8px;
+   color: azure;
+   font-size: 150px;
+}
+
+.maincontianer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+    margin: 25px auto;
+}

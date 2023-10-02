@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    border: 0px solid gray;
+    background-color: rgb(252, 246, 220);
+    width: 40%;
+    padding:0px  100px 30px;
+    margin: 5% auto;
+    text-align: center;
+    box-shadow:2px 2px 3px rgb(194, 190, 190);
+    border-radius: 8px;
+}
+
+form{
+display: flex;
+flex-direction: column;
+    padding-top: 30px;
+}
+
+input{
+    padding:5px;
+    margin: 10px 0px;
+}
+button{
+    padding:5px;
+    margin: 10px auto;
+    width: 20%;
+    background-color: rgb(88, 134, 194);
+    color: white;
+}
+
+h1,h2,p{
+    line-height: 180%;
+}
