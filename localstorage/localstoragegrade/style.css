@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+}
+
+
+#container{
+    background-color: bisque;
+    background-image: linear-gradient( to right, rgb(161, 156, 157),rgb(187, 187, 125),rgb(129, 129, 197),rgb(122, 98, 54));
+width: 70%;
+margin: 5% auto;
+border-radius: 10px;
+box-shadow: 0 0 5px rgb(182, 178, 178);
+}
+
+h1{
+text-align: center;
+padding-top: 30px;
+padding-bottom: 20px;
+}
+
+#card{
+    display: flex;
+    flex-direction: column;
+
+}
+
+label{
+    font-size: 20px;
+}
+
+input{
+    padding: 10px;
+    font-size: large;
+    width: 100%;
+
+    
+}
+
+.container{
+    margin: 0 10px 0 10px ;
+    line-height: 50px;
+
+
+}
+
+li{
+    background-color: rgb(39, 41, 116);
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: white;
+    padding: 5px;
+    line-height: 1.5em;
+    font-size: 1.5em;
+}
+
+li ::before{
+    content: "";
+    position: absolute;
+}
+
+li::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+li button{
+    float: right;
+    border: none;
+    height: 40px;
+    cursor: pointer;
+    background-color: rgb(238, 138, 56);
+    color: white;
+    font-size: 1em;
+    width: 10%;
+}
+
+h2{
+    margin-top: 15px;
+}
+
+
+ul{
+    padding-bottom: 30px;
+}

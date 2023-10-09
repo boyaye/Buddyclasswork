@@ -1,0 +1,129 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family:Arial;
+   
+}
+
+body{
+  margin: 0 auto;
+  min-height: 100vh;
+    
+}
+
+header{
+    padding-top: 25px;
+    text-align: center;
+    background-color: rgb(64, 64, 133);
+    color: white;
+    line-height: 3em;
+    word-spacing: 10px;
+    letter-spacing: 7px;
+    font-size: 17px;
+    padding-bottom: 20px;
+    
+}
+
+header button{
+    font-size: 25px;
+    height: 40px;
+    width: 6em;
+    margin-top: 20px;
+ 
+    background-image: linear-gradient(to right,rgba(87, 33, 33, 0.849),rgb(219, 219, 130),rgb(102, 41, 41));
+    border-radius: 8px;
+ 
+}
+
+#gamestore{
+    display: flex;
+    align-items: center;
+    border: 2px solid gray;
+    width: 50%;
+    height: 25em;
+   justify-content: center;
+   font-size: 25px;
+   margin-top: 2em;
+   margin-left: 2em;
+   font-weight:lighter;
+   background-image: linear-gradient(to right,rgba(196, 94, 94, 0.329),rgb(219, 219, 130),rgba(196, 94, 94, 0.329));
+   border-radius: 8px;
+   letter-spacing: 1em;
+
+   box-shadow: 0px 0px 0px 5px rgb(240, 237, 237);
+
+}
+
+main{
+    background-color: aqua;
+    background-image: linear-gradient(rgb(253, 249, 249),rgb(17, 17, 70));
+    height: auto;
+   padding-bottom: 100px;
+ 
+}
+
+#scorecard h1{
+    line-height: 1.5em;
+}
+
+
+#card{
+    display: flex;
+}
+
+#score{
+    border: 2px groove rgb(204, 190, 190);
+    width: 40%;
+    margin-left: 4em;
+    margin-top: 3em;
+    background-image: linear-gradient(to right,rgba(196, 94, 94, 0.329),rgb(219, 219, 130),rgba(196, 94, 94, 0.329));
+   border-radius: 8px;background-image: linear-gradient(to right,rgba(196, 94, 94, 0.329),rgb(219, 219, 130),rgba(196, 94, 94, 0.329));
+   border-radius: 8px;
+   box-shadow: 0 0 0 5px white;
+   display: flex;
+   flex-direction: column;
+}
+
+#secondleft{
+    border: 1px solid white;
+    width: 90%;
+    margin: 2em auto;
+    padding: 6em;
+    text-align: center;
+    margin-top: 40px;
+    background-color:rgb(64, 64, 133); 
+    color: white;
+    font-size: 20px;
+    height: 20em;
+    line-height: 35px;
+    border-radius: 5px;
+}
+
+#scorecard{
+    display: flex;
+    justify-content:space-between;
+    width: 90%;
+    margin: 3em auto;
+    margin-bottom: 0;
+}
+
+#button{
+    width: 12em;
+    height: 2.5em;
+    cursor:pointer;
+    background-image: linear-gradient(to right,rgba(87, 33, 33, 0.849),rgb(219, 219, 130),rgb(102, 41, 41));
+    border-radius: 8px;
+    
+ 
+}
+
+@media screen and (max-width: 118px){
+
+    main{
+        flex-direction: column;
+    }
+
+    
+    
+}
+

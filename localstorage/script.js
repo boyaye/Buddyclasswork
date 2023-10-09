@@ -93,3 +93,17 @@ function dismessage(type, message){
     document.getElementById("msging").setAttribute("class",type)
 }
 
+
+
+    var car = ["toyota","honda","bmw"]
+
+  
+
+    var text = "";
+    function trying(me,love){
+      text += me
+       
+    }
+    car.forEach(trying)
+
+    console.log(text.split(" "))
