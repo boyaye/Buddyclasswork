@@ -5,11 +5,111 @@ var todolist = document.querySelector("#todo-list")
 
 
 
+var todo = []
+
+
+
+
+function rendertodo(){
+    todolist.innerHTML = "";
+    todocount.textContent = todo.length;
+    for(var i = 0; i < todo.length;i++){
+        var todolistEl = todo[i]
+        var li = document.createElement("li")
+        li.textContent = todolistEl
+        li.setAttribute("data-index", i)
+        var button = document.createElement("button")
+        button.textContent = "Completed";
+        li.appendChild(button)
+        todolist.appendChild(li)
+    }
+}
+
+function storetodo(){
+    localStorage.setItem("todolist", JSON.stringify(todo))
+}
+
+todoForm.addEventListener("submit", function(event){
+    event.preventDefault()
+    var todoinpEL = todoinput.value.trim();
+    if(todoinpEL === ""){
+        return
+    }
+    todo.push(todoinpEL)
+    todoinput.value = "";
+    rendertodo()
+    storetodo()
+
+})
+
+todolist.addEventListener("click", function(event){
+    event.preventDefault()
+    var element = event.target
+    if(element.matches("button") === true){
+        var index = element.parentElement.getAttribute("data-index")
+        todo.splice(index, 1)
+    }
+    rendertodo()
+    storetodo()
+
+})
+
+function init(){
+    if(todoinput === ""){
+        return
+    }
+    rendertodo()
+    storetodo()
+}
+init()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
 var todos = [];
 
 function renderstart(){
 
-    var listemt = todolist.innerHTML = "";
+  todolist.innerHTML = "";
     todocount.textContent = todos.length;
 
     for(var i = 0; i < todos.length; i++){

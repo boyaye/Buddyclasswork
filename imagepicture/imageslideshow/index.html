@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body style="background-color: rgb(20, 19, 19);">
+    <main>
+    <div class="container">
+        <div id="con">
+        <div class="mySlides">
+        <div class="textnumber">1/5</div>
+        <img src="./camera.jpg">
+        </div>
+        <div class="mySlides">
+            <div class="textnumber">3/5</div>
+            <img src="./spinning-top.jpg">
+        </div>
+        <div class="mySlides">
+            <div class="textnumber">4/5</div>
+            <img src="./tablet.jpg">
+        </div>
+        <div class="mySlides">
+            <div class="textnumber">5/5</div>
+            <img src="./wooden-spoons.jpg">
+        </div>
+        <div class="mySlides">
+            <div class="textnumber">5/5</div>
+            <img src="./soap.jpg">
+        </div>
+        <div class="slideoption">
+            <a class="prev" onclick="plusSlide(1)"><</a>
+            <a class="next" onclick="plusSlide(1)">></a>
+        </div>
+    </div>
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+ <div class="row">
+ <div class="column">
+    <img  class="demo cursor" src="./camera.jpg" onclick="currentslide(1)" alt="Camera" width="100%">
+</div>
+<div class="column">
+    <img  class="demo cursor" src="./spinning-top.jpg" onclick="currentslide(2)" alt="Spinning" width="100%">
+</div>
+<div class="column">
+    <img  class="demo cursor" src="./tablet.jpg" onclick="currentslide(3)" alt="Tablet" width="100%">
+</div>
+<div class="column">
+    <img  class="demo cursor" src="wooden-spoons.jpg" onclick="currentslide(4)" alt="Wooden Spoon" width="100%">
+</div>
+<div class="column">
+    <img  class="demo cursor" src="soap.jpg" onclick="currentslide(5)" alt="soap " width="100%">
+</div>
+
+
+</div>
+    </div>
+</main>
+    <script src="./script.js"></script>
+</body>
+</html>

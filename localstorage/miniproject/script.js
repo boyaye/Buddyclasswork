@@ -5,14 +5,189 @@ var loses = document.getElementById("loses");
 var count = document.getElementById("minuteleft");
 var resetEl = document.getElementById("button");  
 
+var choiceword = "";
+var letterwordsplit;
+var letterlength
+var letterBlank = []
+var timeleft = 10;
+var isWin = true
+var wincounter = 0
+var losecounter = 0
+var disable = true;
+
+startgameEl.addEventListener("click",startgame)
+
+function startgame(event){
+    event.preventDefault()
+    isWin = false
+    startgameEl.disable = true
+    
+ 
+    remdergame()
+    settime()
+}
+
+
+var words = ["variable","boolean","array","script","object","number"] ;
+
+function remdergame(){
+choiceword = words[Math.floor(Math.random()*words.length)]
+letterwordsplit = choiceword.split("")
+letterlength = letterwordsplit.length
+letterBlank = []
+for(var i = 0;i < letterlength;i++){
+    letterBlank.push("_")
+}
+gamepage.textContent=letterBlank.join("")
+}
+
+
+document.addEventListener("keydown", function(event){
+    if(timeleft === 0){
+        return;
+    }
+    event.preventDefault()
+    var key = event.key.toLowerCase()
+    var keyspress = "abcdefghijklmnopqrstuvwxyz1234567890".split("")
+    if(keyspress.includes(key)){
+        keyspress = event.key
+        keyguess(keyspress)
+        checkforwin()
+    }
+})
+  
+function checkforwin(){
+    if(choiceword === letterBlank.join("")){
+        isWin = true
+    }
+}
+
+function keyguess(wordpree){
+    var letter = false
+    for(var i = 0; i < letterlength;i++){
+        if(choiceword[i] === wordpree){
+            letter = true
+        }
+    }if(letter){
+        for(var j = 0;j< letterlength;j++ ){
+            if(choiceword[j] === wordpree){
+                letterBlank[j] = wordpree
+            }
+        }
+        gamepage.textContent = letterBlank.join("")
+    }
+}
+
+
+
+
+function settime(){
+    timeleft = 10
+    var cleartime = setInterval(function(){
+        timeleft--;
+        if(timeleft >= 0){
+            if(isWin === true && timeleft > 0){
+                clearInterval(cleartime)
+                wingame()
+            }
+        }if(timeleft === 0){
+            clearInterval(cleartime)
+            losegame()
+        }
+        count.textContent = timeleft
+
+    },1000)
+
+}
+
+function wingame(){
+    wincounter++;
+    gamepage.textContent = "YOU WON !!!";
+    startgameEl.disable = false;
+    storewin()
+}
+
+function losegame(){
+    losecounter++;
+    gamepage.textContent = "GAME OVER"
+startgameEl.disable = false;
+storelose()
+}
+
+
+function storewin(){
+    win.textContent = wincounter
+    localStorage.setItem("storewin", wincounter)
+
+}
+
+function storelose(){
+    loses.textContent = losecounter
+    localStorage.setItem("storelose",losecounter)
+}
+
+resetEl.addEventListener("click", function(event){
+    event.preventDefault()
+    wincounter = 0
+    losecounter = 0
+    win.textContent = wincounter
+    loses.textContent = losecounter
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
 var numberblank ;
 var wordchioce ="" ;
 var timecount = 10 ;
 var wincounter = 0;
 var losecounter = 0;
-var blankletters ;
+var blankletters = [];
 var letterinchoosen ;
-
+var wordlatter;
+var isawin = true;
+var disable = true
 
 var iswin = true
 
@@ -53,12 +228,11 @@ if(timecount === 0){
 
 },1000)
 }
-var blue = document.querySelector(".blue")
+
 
 function wingame(){
-    var clear = blue.setAttribute("style","background:blue")
-    var clearel = gamepage.textContent = "YOU WON!!!🏆";
-    clear = clearel
+   
+gamepage.textContent = "YOU WON!!!🏆";
     wincounter++;
     startgameEl.disable = false
 savewin()
@@ -66,7 +240,6 @@ savewin()
 
 function losegame(){
     gamepage.textContent ="GAME OVER" ;
-    blue.setAttribute("style","background:red;color:white")
     losecounter++;
     startgameEl.disable = false
 savelose()
@@ -136,7 +309,7 @@ startgameEl.disable = true
     renderstart()
     timeinterval()
 }
-
+/*
 //------------------- function for int()
 
 
@@ -179,3 +352,5 @@ function init(){
 }
 
 init()
+
+*/

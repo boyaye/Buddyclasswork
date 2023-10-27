@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./sytyle.css">
+</head>
+<body>
+    <div class="slideshow-container">
+    <div>
+        <div class="myslides fade">
+        <div class="numbertext">1/3</div>
+        <img src="./camera.jpg" alt="camera" width="100%" height="400px">
+        <div class="text">caption one</div>
+        </div>
+    
+        <div class="myslides fade">
+        <div class="numbertext">2/3</div>
+        <img src="./tablet.jpg" alt="camera" width="100%" height="400px">
+        <div class="text">caption two</div>
+        </div>
+   
+        <div class="myslides fade">
+        <div class="numbertext">3/3</div>
+        <img src="./wooden-spoons.jpg" alt="camera" width="100%" height="400px">
+        <div class="text">caption three</div>
+        </div>
+
+      <a class="prev" onclick="showslidesone(-1)" ><</a>
+       <a class="next" onclick="showslidesone(1)">></a>
+       </div>
+      <br>
+     <div style="text-align: center;" id="dotEL">
+     <span class="dot" onclick="currrentslide(1)"></span>
+     <span class="dot" onclick="currrentslide(2)"></span>
+      <span class="dot"onclick="currrentslide(3)"></span>
+      </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

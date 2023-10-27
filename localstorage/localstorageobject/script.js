@@ -23,8 +23,8 @@ var studentgrades = {
 })
 
 function rendermessage(){
-    var gradeinfo = JSON.parse(localStorage.getItem("studentgrades"))
+    var gradeinfo = JSON.parse(localStorage.getItem("grader"))
 if(gradeinfo !== null){
-    messageEl.textContent= gradeinfo.Studentinfo+" "+gradeinfo.grades
+    messageEl.textContent= gradeinfo.Studentinfo +" "+ gradeinfo.grades
 }
 }

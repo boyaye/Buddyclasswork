@@ -2,25 +2,28 @@ var firstname = document.querySelector("#firstname");
 var lastname = document.getElementById("lastname");
 var emailel = document.querySelector("#email");
 var password = document.getElementById("password");
-
+var messageEl = document.getElementById("msg")
 var signup2 = document.getElementById("sign");
 
-console.log(signup2)
 
-signup2?.addEventListener("click", (event) => {
-    event.preventDefault();
 
-    var userinform = {
-        first: firstname.value.trim(),
-        last: lastname.value.trim(),
-        email: emailel.value.trim(),
-       password1: password.value.trim()
+signup2.addEventListener("click",function(event){
+  event.preventDefault()
 
-    };
+var  completeinfo = {
+  firstName : firstname.value.trim(),
+  lastName: lastname.value.trim(),
+  email:emailel.value.trim(), 
+  password:password.value.trim()
+}
 
-    localStorage.setItem("userdetail ", JSON.stringify(userinform))
+localStorage.setItem("info", JSON.stringify(completeinfo))
 
-    msgmessage()
-kjjkbh
+var storevalue = JSON.parse(localStorage.getItem("info"))
+if(storevalue === ""){
+  return;
+}else{
+  messageEl.textContent = "Thank you for signing, will contact you @"+ storevalue.email
+}
+
 })
-

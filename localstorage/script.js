@@ -5,46 +5,65 @@ var displaypass = document.querySelector("#password")
 var signUp = document.getElementById("submit")
 var msg = document.getElementById("msg")
 
-renderlastregister();
 
 
-function renderlastregister(){
-var email1 = localStorage.getItem("email2")
-var password1 = localStorage.getItem("password2")
-
-if(email1 === null && password1 === null){
-    return;
-}
-displayemail.textContent = email1;
-displaypass.textContent = password1;
-}
-
-signUp.addEventListener("click", signupfunc)
-
-function signupfunc(event){
+signUp.addEventListener("click",function(event){
     event.preventDefault()
 
-  var email4 = emailIpt.value
-  var password4 = passIpt.value
-  if(email4 === ""){
-    messageinstruction("error","Email cannot be blank")
-  }else if(password4 === ""){
-    messageinstruction("error","Password cannot be blank")
+    var emailinput = emailIpt.value.trim();
+    var passwordinp = passIpt.value.trim();
 
-  }else{
-    messageinstruction("success","Registration Successful")
-  }
+    localStorage.setItem("storeEmail",emailinput)
+    localStorage.setItem("storepass",passwordinp)
 
-  localStorage.setItem("email2",email4)
-localStorage.setItem("password2",password4)
-renderlastregister()
-}
+    if(emailinput === ""){
+        messagealert("error","Enter a valid email")
+    }else if(passwordinp === ""){
+        messagealert("error","Password must not be Blank")
+    }else{
+        messagealert("success","your signup was successful")
+    }
 
-function messageinstruction(type,message){
+    function messagealert(type,message){
+        msg.textContent = message
+        msg.setAttribute("class",type)
+    }
+   displayemail.textContent = emailinput
+displaypass.textContent = passwordinp
+})
 
-    msg.textContent = message
-    msg.setAttribute("class",type)
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //--------------------------------------------------------------
 
@@ -94,16 +113,3 @@ function dismessage(type, message){
 }
 
 
-
-    var car = ["toyota","honda","bmw"]
-
-  
-
-    var text = "";
-    function trying(me,love){
-      text += me
-       
-    }
-    car.forEach(trying)
-
-    console.log(text.split(" "))
