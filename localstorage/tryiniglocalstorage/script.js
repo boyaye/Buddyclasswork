@@ -55,12 +55,12 @@ todolist.addEventListener("click", function(event){
 })
 
 function init(){
-    if(todoinput === ""){
-        return
-    }
-    rendertodo()
-    storetodo()
-}
+  var storelist = JSON.parse(localStorage.getItem("todolist"))
+  if(storelist !== null){
+todo = storelist
+  }
+  rendertodo()
+ }
 init()
 
 

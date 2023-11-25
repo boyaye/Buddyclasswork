@@ -5,135 +5,150 @@ var loses = document.getElementById("loses");
 var count = document.getElementById("minuteleft");
 var resetEl = document.getElementById("button");  
 
-var choiceword = "";
-var letterwordsplit;
+var wordchioce = ""
+var lettersplit;
 var letterlength
-var letterBlank = []
-var timeleft = 10;
+var blankletter = [];
 var isWin = true
 var wincounter = 0
 var losecounter = 0
-var disable = true;
-
-startgameEl.addEventListener("click",startgame)
-
-function startgame(event){
-    event.preventDefault()
-    isWin = false
-    startgameEl.disable = true
-    
- 
-    remdergame()
-    settime()
-}
+var minuteleft = 10;
+var disable = true
 
 
-var words = ["variable","boolean","array","script","object","number"] ;
+var words = ["variable","boolean","array","script","object","number"]  
 
-function remdergame(){
-choiceword = words[Math.floor(Math.random()*words.length)]
-letterwordsplit = choiceword.split("")
-letterlength = letterwordsplit.length
-letterBlank = []
-for(var i = 0;i < letterlength;i++){
-    letterBlank.push("_")
-}
-gamepage.textContent=letterBlank.join("")
-}
-
-
-document.addEventListener("keydown", function(event){
-    if(timeleft === 0){
-        return;
-    }
-    event.preventDefault()
-    var key = event.key.toLowerCase()
-    var keyspress = "abcdefghijklmnopqrstuvwxyz1234567890".split("")
-    if(keyspress.includes(key)){
-        keyspress = event.key
-        keyguess(keyspress)
-        checkforwin()
-    }
-})
-  
-function checkforwin(){
-    if(choiceword === letterBlank.join("")){
-        isWin = true
-    }
-}
-
-function keyguess(wordpree){
-    var letter = false
+function rendertodo(){
+    wordchioce = words[Math.floor(Math.random()*words.length)]
+    lettersplit = wordchioce.split("")
+    letterlength = lettersplit.length
+    blankletter = [];
     for(var i = 0; i < letterlength;i++){
-        if(choiceword[i] === wordpree){
-            letter = true
-        }
-    }if(letter){
-        for(var j = 0;j< letterlength;j++ ){
-            if(choiceword[j] === wordpree){
-                letterBlank[j] = wordpree
-            }
-        }
-        gamepage.textContent = letterBlank.join("")
+        blankletter.push("_")
     }
+
+    gamepage.textContent = blankletter.join("")
+
 }
 
-
-
-
-function settime(){
-    timeleft = 10
-    var cleartime = setInterval(function(){
-        timeleft--;
-        if(timeleft >= 0){
-            if(isWin === true && timeleft > 0){
-                clearInterval(cleartime)
+function settimer(){
+    minuteleft = 10;
+    var cleatimer = setInterval(function(){
+        minuteleft--;
+        if(minuteleft >= 0){
+            if(isWin && minuteleft > 0){
+                clearInterval(cleatimer)
                 wingame()
             }
-        }if(timeleft === 0){
-            clearInterval(cleartime)
+        }if(minuteleft === 0){
+            clearInterval(cleatimer)
             losegame()
         }
-        count.textContent = timeleft
-
+        count.textContent = minuteleft
     },1000)
-
 }
+
 
 function wingame(){
     wincounter++;
-    gamepage.textContent = "YOU WON !!!";
+    gamepage.textContent = "YOU WON !!!"
     startgameEl.disable = false;
-    storewin()
+    localStorage.setItem("storewin",wincounter)
+    win.textContent = wincounter
+    
 }
 
 function losegame(){
-    losecounter++;
     gamepage.textContent = "GAME OVER"
-startgameEl.disable = false;
-storelose()
-}
-
-
-function storewin(){
-    win.textContent = wincounter
-    localStorage.setItem("storewin", wincounter)
-
-}
-
-function storelose(){
+    losecounter++;
+    localStorage.setItem("storelose", losecounter)
     loses.textContent = losecounter
-    localStorage.setItem("storelose",losecounter)
+    startgameEl.disable = false
 }
 
 resetEl.addEventListener("click", function(event){
     event.preventDefault()
-    wincounter = 0
+    wincounter = 0;
     losecounter = 0
     win.textContent = wincounter
     loses.textContent = losecounter
 })
 
+function startgame(event){
+    event.preventDefault()
+    isWin = false;
+    rendertodo()
+    settimer()
+}
+
+startgameEl.addEventListener("click",startgame)
+
+
+document.addEventListener("keydown", function(event){
+event.preventDefault()
+if(minuteleft === 0){
+    return
+}
+var keys = event.key.toLowerCase()
+var keypress = "abcdefghijklmnopqrstuvwxyz1234567890".split("")
+if(keypress.includes(keys)){
+    var keyguess = event.key
+    chosenkey(keyguess)
+    checkwin()
+}
+})
+
+function checkwin(){
+    if(wordchioce === blankletter.join("")){
+        isWin = true
+    }
+}
+
+function chosenkey(letter){
+    var letterchoosen = false
+    for(var i = 0; i < letterlength;i++){
+        if(wordchioce[i] === letter){
+            letterchoosen = true
+        }
+    }if(letterchoosen){
+        for(var j = 0; j < letterlength;j++){
+            if(wordchioce[j] === letter){
+                blankletter[j] = letter
+            }
+        }
+       
+    }
+    gamepage.textContent = blankletter.join("")
+}
+
+
+function init(){
+    getwin()
+    getlose()
+}
+
+init()
+
+
+function getwin(){
+    var storewinEl = localStorage.getItem("storewin")
+    if(storewinEl !== null){
+        win.textContent = storewinEl
+    }else{
+        return
+    }
+   
+}
+
+function getlose(){
+    var sotreloseEl = localStorage.getItem("storelose")
+    if(sotreloseEl !== null){
+        loses.textContent = sotreloseEl
+    }else{
+        return
+    }
+    
+}
 
 
 

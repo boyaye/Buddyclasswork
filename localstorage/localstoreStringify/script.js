@@ -6,24 +6,17 @@ var messageEl = document.getElementById("msg")
 var signup2 = document.getElementById("sign");
 
 
-
-signup2.addEventListener("click",function(event){
+signup2.addEventListener("click", function(event){
   event.preventDefault()
 
-var  completeinfo = {
-  firstName : firstname.value.trim(),
-  lastName: lastname.value.trim(),
-  email:emailel.value.trim(), 
-  password:password.value.trim()
-}
+  var studentdetials = {
+    firstname:firstname.value.trim(),
+    lastname:lastname.value.trim(),
+    email:emailel.value.trim(),
+    passworD:password.value.trim(),
+    
+  }
 
-localStorage.setItem("info", JSON.stringify(completeinfo))
-
-var storevalue = JSON.parse(localStorage.getItem("info"))
-if(storevalue === ""){
-  return;
-}else{
-  messageEl.textContent = "Thank you for signing, will contact you @"+ storevalue.email
-}
-
+  localStorage.setItem("storedetials",JSON.stringify(studentdetials))
+  messageEl.textContent = "Thanks for sigup "+" "+studentdetials.firstname+" "+studentdetials.lastname
 })

@@ -18,13 +18,7 @@ var studentgrades = {
 };
 
     localStorage.setItem("grader", JSON.stringify(studentgrades))
-    
-    rendermessage();
-})
+ 
+    messageEl.textContent = "your detials is save "+" "+studentgrades.Studentinfo
 
-function rendermessage(){
-    var gradeinfo = JSON.parse(localStorage.getItem("grader"))
-if(gradeinfo !== null){
-    messageEl.textContent= gradeinfo.Studentinfo +" "+ gradeinfo.grades
-}
-}
+})

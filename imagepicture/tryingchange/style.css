@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.demo{
+    background-color: blue;
+    padding: 40px;
+  width: 60%;
+  margin: 20px auto;
+}
+
+.change{
+background-color: brown;
+    padding: 40px;
+    width: 60%;
+    margin: 20px auto;
+}
+
+.me{
+    background-color: orange;
+        padding: 40px;
+    width: 60%;
+    margin: 20px auto;
+}

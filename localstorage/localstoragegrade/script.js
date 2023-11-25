@@ -3,55 +3,68 @@
   var todoList = document.querySelector("#todo-list");
   var todocount = document.querySelector("#todo-count");
 
+var todo = []
 
-var todos = [];
+function rendertodo(){
+  todoList.textContent = "";
+  todocount.textContent = todo.length;
+  for(var i = 0; i < todo.length;i++){
+    var todos = todo[i]
+    var li = document.createElement("li")
+    li.textContent = todos
+    todoList.appendChild(li)
+    li.setAttribute("data-index", i)
+    var button = document.createElement("button")
+    button.textContent = "Completed"
+    li.appendChild(button)
+  }
 
-function renderlist(){
-    todoList.textContent = "";
-    todocount.textContent = todos.length
+} 
 
-    for(var i = 0;i < todos.length;i++){
-        var todoinfo = todos[i]
-        var li = document.createElement("li")
-        li.textContent = todoinfo
-        li.setAttribute("data-index", i)
-        todoList.appendChild(li)
-        var button = document.createElement("button")
-        button.textContent = "Finalize"
-        li.appendChild(button)
-    }
-}
-
-function savedata(){
-    localStorage.setItem("todos",JSON.stringify(todos))
+function storetodos(){
+    localStorage.setItem("storetodo",JSON.stringify(todo))
 }
 
 todoform.addEventListener("submit", function(event){
     event.preventDefault()
-    if(todoInput === ""){
+    var inputvalue = todoInput.value.trim()
+    if(inputvalue === ""){
         return;
     }
-    var inputvalue = todoInput.value.trim()
-       
-    todos.push(inputvalue)
+    todo.push(inputvalue)
     todoInput.value = "";
-
-    renderlist()
-    savedata()
-
+    rendertodo()
+    storetodos()
 })
+
 
 todoList.addEventListener("click", function(event){
     event.preventDefault()
     var element = event.target
-    
     if(element.matches("button") === true){
         var index = element.parentElement.getAttribute("data-index")
-        todos.splice(index, 1)
+        todo.splice(index, 1)
     }
-    renderlist()
-    savedata()
+    rendertodo()
+    storetodos()
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

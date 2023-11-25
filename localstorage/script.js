@@ -6,38 +6,52 @@ var signUp = document.getElementById("submit")
 var msg = document.getElementById("msg")
 
 
-
-signUp.addEventListener("click",function(event){
+signUp.addEventListener("click", function(event){
     event.preventDefault()
-
-    var emailinput = emailIpt.value.trim();
-    var passwordinp = passIpt.value.trim();
-
-    localStorage.setItem("storeEmail",emailinput)
-    localStorage.setItem("storepass",passwordinp)
-
-    if(emailinput === ""){
-        messagealert("error","Enter a valid email")
-    }else if(passwordinp === ""){
-        messagealert("error","Password must not be Blank")
-    }else{
-        messagealert("success","your signup was successful")
-    }
-
-    function messagealert(type,message){
-        msg.textContent = message
-        msg.setAttribute("class",type)
-    }
-   displayemail.textContent = emailinput
-displaypass.textContent = passwordinp
+    sinupinfo()
+    renderlast()
 })
+function renderlast(){
+    var storeEmail = localStorage.getItem("email")
+    var storePass = localStorage.getItem("password")
+    if(storeEmail !== null){
+        displayemail.innerHTML = storeEmail
+    }
+    if(storePass !== null){
+displaypass.innerHTML = storePass
+}
+}
 
 
+function sinupinfo(){
+   
+    var email = emailIpt.value.trim()
+    var password = passIpt.value.trim() 
 
+    localStorage.setItem("email", email)
+    localStorage.setItem("password", password)
+    displayemail.textContent = email
+    displaypass.textContent = password
 
+if(email === ""){
+    messageinput("error"," Enter a valid email ")
+}else if(password === ""){
+    messageinput("error", "Paassword must not be Blank")
+}else{
+    messageinput("success","you sign up successful")
+}
+}
 
+function messageinput(type,message){
+    msg.textContent = message;
+    msg.setAttribute("class",type)
+   
+}
 
-
+function init(){
+    renderlast()
+}
+init()
 
 
 
